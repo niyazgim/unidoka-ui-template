@@ -20,6 +20,4 @@
 #           script: |
 #             cd ${{ secrets.PROJECT_PATH }}
 #             git fetch origin main && git reset --hard origin/main
-
-#             cd ${{ secrets.INFRA_PATH }}
-#             make rebuild ENV=prod SERVICES=${{ secrets.CONTAINER_NAME }}
+#             docker compose --profile prod up -d --build --force-recreate
